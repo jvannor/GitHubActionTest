@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  githubactiontest:
+    image: ${DOCKER_REGISTRY-}githubactiontest
+    build:
+      context: .
+      dockerfile: GitHubActionTest/Dockerfile
