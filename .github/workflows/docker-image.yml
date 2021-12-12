@@ -15,6 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build ./GitHubActionTest --file Dockerfile --tag jvannor/github-action-test:$(date +%s)
+      working-directory: ./GitHubActionTest
+      run: docker build . --file Dockerfile --tag jvannor/github-action-test:$(date +%s)
     - name: Push
       run: docker push jvannor/github-action-test:$(date +%s)
